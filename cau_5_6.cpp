@@ -11,7 +11,8 @@ void HoTen(){
     
     cout << "Nhap so bao danh: ";
     getline(cin, sobaodanh);
-
+	
+	cout << "Ho ten cua ban la: " << hoten << endl;
     cout << "So bao danh cua ban la: " << sobaodanh << endl;
 }
 
