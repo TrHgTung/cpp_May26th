@@ -17,41 +17,38 @@ void HoTen(){
 }
 
 void ThoiGian() {
-    int thang, nam;
+
+    int thang, soNgay, nam;
     cout << "Nhap thang : ";
     cin >> thang;
     
     cout << "Nhap nam: ";
     cin >> nam;
 
-    //cout << "Ta co so dien cua thang truoc la: " << thang_truoc << " va cua thang sau la: "<< thang_sau << endl;
-    
-	
-	// Ta co 1 don vi tren dong ho dien bang 1 kW
-	
-    //int soDienHaiThang = thang_truoc + thang_sau;
-    //cout << "So m3 nuoc tieu thu la: "<< soDienHaiThang << endl;
-    
-    
-    // 100kw dau tien: 1242vnd/kw ; 101->150kw: 1304vnd/kw ; 151->200 : 1651vnd/kw ; 201 -> : 1912vnd/kw
-    int so_luong_ngay;
-    
-    if(soDienHaiThang <= 100){
-    	tienDien = soDienHaiThang * 1242;
-    	cout << "So tien dien phai tra la (da tinh thue 10%): " << tienDien + ((tienDien*10)/100) <<" VND"<< endl;
-	}
-	else if(soDienHaiThang >= 101 && soDienHaiThang <= 150){
-		tienDien = soDienHaiThang * 1304;
-    	cout << "So tien dien phai tra la (da tinh thue 10%): " << tienDien + ((tienDien*10)/100) <<" VND"<<endl;
-	}
-	else if(soDienHaiThang >= 151 && soDienHaiThang <= 200){
-		tienDien = soDienHaiThang * 1651;
-    	cout << "So tien dien phai tra la (da tinh thue 10%): " << tienDien + ((tienDien*10)/100) <<" VND"<<endl;
-	}
-	else{
-		tienDien = soDienHaiThang * 1912;
-    	cout << "So tien dien phai tra la (da tinh thue 10%): " << tienDien + ((tienDien*10)/100) << " VND"<< endl;
-	}
+//    int soNgay;
+
+    // Kiem tra tung truong hop thang de xac dinh so luong ngayf
+    if (thang == 2) {
+        // nam nhuan
+//        int nam;
+//        std::cout << "Nhap nam: ";
+//        std::cin >> nam;
+
+        if ((nam % 4 == 0 && nam % 100 != 0) || nam % 400 == 0) {
+            soNgay = 29; // thang 2 : 29 ng (nhuan)(
+        } else {
+            soNgay = 28; // thang 2 : 28 ng (ko nhuan)
+        }
+    } else if (thang == 4 || thang == 6 || thang == 9 || thang == 11) {
+        soNgay = 30; // Thang 4, 6, 9, 11 : 30 ng
+    } else {
+        soNgay = 31; // con lai: 31 ng
+    }
+
+   	cout << "So ngay trong thang " << thang << " trong nam "<< nam << " la: " << soNgay << endl;
+
+
+
 }
 
 int main(){
